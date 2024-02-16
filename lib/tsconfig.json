@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "relayer-engine/lib",
+    "target": "esnext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "lib": ["es2019"],
+    "declaration": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "sourceMap": true
+  },
+  "include": ["relayer-engine/src"],
+  "exclude": [
+    "node_modules",
+    "relayer-engine/lib/**/*",
+    "**/__tests__/*",
+    "relayer-engine/src/**/*.test.ts"
+  ]
+}

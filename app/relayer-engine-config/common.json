@@ -1,0 +1,50 @@
+{
+  "logLevel": "debug",
+  "storeType": "Redis",
+  "readinessPort": 2000,
+  "numGuardians": 1,
+  "redisPort": 6379,
+  "redisHost": "localhost",
+  "supportedChains": [
+    {
+      "chainId": 1,
+      "chainName": "Solana",
+      "nodeUrl": "https://api.devnet.solana.com",
+      "tokenBridgeAddress": "DZnkkTmCiFWfYTfT41X3Rd1kDgozqzxWaHqsw6W4x2oe",
+      "bridgeAddress": "3u8hJUVTA4jH1wYAyUur7FFZVQ8H635K3tSHHF4ssjQ5",
+      "wrappedAsset": "So11111111111111111111111111111111111111112"
+    },
+    {
+      "chainId": 2,
+      "chainName": "ethereum",
+      "nodeUrl": "https://mainnet.infura.io/v3/539d8f739090453abee027842bbd5671",
+      "tokenBridgeAddress": "0x3ee18B2214AFF97000D974cf647E7C347E8fa585",
+      "bridgeAddress": "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B",
+      "wrappedAsset": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    },
+    {
+      "chainId": 4,
+      "chainName": "bsc",
+      "nodeUrl": "https://wandering-tiniest-resonance.bsc.quiknode.pro/bdf3a9c0f29b436370ce60cb501a1c1a00a42d64/",
+      "tokenBridgeAddress": "0xB6F6D86a8f9879A9c87f643768d9efc38c1Da6E7",
+      "bridgeAddress": "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B",
+      "wrappedAsset": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+    },
+    {
+      "chainId": 5,
+      "chainName": "polygon",
+      "nodeUrl": "https://silent-cosmological-field.matic.quiknode.pro/292df0e326c595ff4637df99975920390e7ab8c5/",
+      "tokenBridgeAddress": "0x5a58505a96D1dbf8dF91cB21B54419FC36e93fdE",
+      "bridgeAddress": "0x7A4B5a56256163F07b2C80A7cA55aBE66c4ec4d7",
+      "wrappedAsset": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174"
+    },
+    {
+      "chainId": 6,
+      "chainName": "Fuji",
+      "nodeUrl": "https://api.avax-test.network/ext/bc/C/rpc",
+      "tokenBridgeAddress": "0x61E44E506Ca5659E6c0bba9b678586fA2d729756",
+      "bridgeAddress": "0x7bbcE28e64B3F8b84d876Ab298393c38ad7aac4C",
+      "wrappedAsset": "0x1D308089a2D1Ced3f1Ce36B1FcaF815b07217be3"
+    }
+  ]
+}

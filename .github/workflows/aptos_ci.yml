@@ -1,0 +1,39 @@
+name: Aptos CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [19.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Aptos
+        run: |
+          sudo apt update
+          sudo apt-get install build-essential
+          sudo apt install git -y
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo "/home/linuxbrew/.linuxbrew/Cellar/aptos/1.0.8/bin/" >> $GITHUB_PATH
+          /home/linuxbrew/.linuxbrew/bin/brew install aptos
+          /home/linuxbrew/.linuxbrew/bin/brew install gcc
+      - name: Install Wormhole
+        run: |
+          cd aptos
+          sh scripts/install-wormhole.sh
+      - name: Build
+        run: |
+          cd aptos/contracts
+          yarn build
+      - name: Run unit-test
+        run: |
+          cd aptos/contracts
+          yarn test

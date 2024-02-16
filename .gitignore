@@ -1,0 +1,15 @@
+.idea
+.vscode
+.nyc
+.env
+.DS_Store
+lib/relayer-engine/lib
+lib/relayer-engine/src/build
+app/lib
+app/build
+app/config/*/*.json
+app/yarn.lock
+!relayer-engine/packages/relayer-plugin-interface/lib
+npm-debug.log
+**/node_modules
+config/mainnet_config.json

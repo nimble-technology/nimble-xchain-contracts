@@ -1,0 +1,5 @@
+node_modules
+lib
+build
+config/mainnet_config.json
+mainnet-deploy/deploy-logs

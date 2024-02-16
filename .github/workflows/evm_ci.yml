@@ -1,0 +1,40 @@
+name: EVM CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [19.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: './evm/package-lock.json'
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+      - name: Install and Build
+        run: |
+          cd evm
+          make clean
+          make install
+          make build
+      - name: Run unit-test
+        run: |
+          cd evm
+          make unit-test
+      - name: Run integration-test
+        run: |
+          cd evm
+          make integration-test
